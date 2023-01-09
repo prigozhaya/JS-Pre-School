@@ -71,6 +71,10 @@ ul.nav li {
   display: inline;
   padding-left: 43px;
 }
+ul li {
+  display: inline;
+  list-style-type:none;
+}
 ul.nav {
   margin: 0;
 }
