@@ -541,7 +541,7 @@ ul.nav li a:hover {
 footer {
   background: #ffffff;
   margin: 0;
-  padding: 45px 0;
+  padding: 27px 0;
   display: flex;
   justify-content: space-between;
   color: #000000;
@@ -556,11 +556,11 @@ footer {
   padding-top: 2px;
 }
 .links img {
-  padding-left: 20px;
+  padding-left: 14px;
   padding-top: 1px;
 }
 .footer-rs {
-  padding-left: 37px;
+  padding-left: 70px;
 }
 .git p {
   padding-right: 20px;
