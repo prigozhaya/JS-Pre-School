@@ -67,13 +67,18 @@ nav {
 .logo img {
   padding-top: 10px;
 }
+.close-icon img {
+  display: none;
+}
+.burger-menu {
+  display: none;
+}
+.first-nav-li {
+  padding-left: 0px;
+}
 ul.nav li {
   display: inline;
-  padding-left: 43px;
-}
-ul li {
-  display: inline;
-  list-style-type:none;
+  margin-left: 43px;
 }
 ul.nav {
   margin: 0;
@@ -129,6 +134,11 @@ ul.nav li a:hover {
   line-height: 16px;
   color: #000000;
   margin: 0;
+}
+.offer button:hover {
+  background-color: #e06733;
+  color: #fff;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 /*about----------------------*/
@@ -199,6 +209,9 @@ ul.nav li a:hover {
   margin-bottom: 0;
   width: 100%;
 }
+.tablet-card{
+  display: none;
+}
 .description {
   border: 1px solid #e3e1d5;
   border-radius: 0px 0px 20px 20px;
@@ -223,7 +236,7 @@ ul.nav li a:hover {
 }
 
 /*prices---------------------------*/
-.prices h2 {
+.prices h2, .gardeners p {
   font-family: "Inter", sans-serif;
   padding-top: 38px;
   font-weight: 700;
@@ -235,9 +248,12 @@ ul.nav li a:hover {
   justify-content: space-between;
   padding-bottom: 105px;
 }
-.gardeners h2 {
+.gardeners p {
   max-width: 452px;
   padding-bottom: 41px;
+  text-align: right;
+  font-weight: 700;
+  font-size: 40px;
   text-align: right;
 }
 .gardeners img {
@@ -263,6 +279,7 @@ ul.nav li a:hover {
   font-family: "Inter";
   margin-bottom: 32px;
   max-width: 250px;
+  transition: box-shadow 0.5s;
 }
 .tab-border {
   padding: 34px 41px 2px 41px;
@@ -341,7 +358,7 @@ ul.nav li a:hover {
   transition: background-color 0.5s;
 }
 .tab :checked + .tab-title::after {
-  content: url(img/accordion_btn_up.svg);
+  content: url(/img/accordion_btn_up.svg);
   transform: rotate(180deg);
   width: 16px;
   height: 16px;
@@ -372,6 +389,7 @@ ul.nav li a:hover {
 }
 .tab:hover {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.5s;
 }
 /* dropdown styles ----------*/
 .citys {
@@ -405,6 +423,8 @@ ul.nav li a:hover {
   line-height: 40px;
   letter-spacing: 0.05em;
   color: #717171;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.5s;
 }
 .custom-options {
   position: absolute;
@@ -445,16 +465,34 @@ ul.nav li a:hover {
   cursor: pointer;
   transition: all 1s;
 }
+.placeholder-option {
+  position: relative;
+  display: block;
+  padding-top: 12px;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 0.05em;
+  color: #499a18;
+  cursor: pointer;
+  transition: all 1s;
+}
 .selected-city {
   background: #c1e698;
 }
-.active-hr {
+.option-hr.active-hr {
   background: #717171;
+  height: 1.5px;
   transition: all 1s;
 }
 .custom-option:hover {
   cursor: pointer;
   color: #717171;
+}
+.placeholder.selected{
+  font-size: 16px;
+  padding-left: 10px;
 }
 .arrow {
   position: relative;
@@ -466,7 +504,7 @@ ul.nav li a:hover {
   float: right;
   transition: all 1s;
 }
-.open .arrow {
+.arrow.opened  {
   background: url(img/drop_btn.svg);
   background-repeat: no-repeat;
   transform: rotate(180deg);
@@ -475,19 +513,23 @@ ul.nav li a:hover {
   background: #c1e698;
 }
 .select-trigger:hover {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
+  transition: box-shadow 0.5s;
 }
 .city {
-  display: none;
+  display: flex;
   padding: 17px 76px 32px 33px;
   border: 1px solid #000000;
   border-radius: 20px;
   margin-top: 47px;
   opacity: 0;
+  pointer-events: none;
 }
 .city-show {
+  pointer-events: all;
   display: flex;
   animation: showBlock 0.5s linear forwards;
+  animation-delay: 1.5s;
 }
 @keyframes showBlock {
   0% {
@@ -500,14 +542,14 @@ ul.nav li a:hover {
 .field p {
   font-weight: 400;
   font-size: 16px;
-  line-height: 35px;
+  line-height: 39px;
   letter-spacing: 0.05em;
   color: #000000;
 }
 .info p {
   font-weight: 400;
   font-size: 16px;
-  line-height: 35px;
+  line-height: 39px;
   letter-spacing: 0.05em;
   color: #717171;
   padding-left: 15px;
@@ -520,8 +562,8 @@ ul.nav li a:hover {
   line-height: 13px;
   text-align: center;
   color: #717171;
-  padding: 7px 29px;
-  margin: 24px 0 0 15px;
+  padding: 7px 43px;
+  margin: 19px 0 0 15px;
   transition: background-color 0.5s, color 0.5s;
 }
 .info button:hover {
@@ -541,7 +583,7 @@ ul.nav li a:hover {
 footer {
   background: #ffffff;
   margin: 0;
-  padding: 27px 0;
+  padding: 45px 0;
   display: flex;
   justify-content: space-between;
   color: #000000;
@@ -556,11 +598,11 @@ footer {
   padding-top: 2px;
 }
 .links img {
-  padding-left: 14px;
+  padding-left: 20px;
   padding-top: 1px;
 }
 .footer-rs {
-  padding-left: 70px;
+  padding-left: 37px;
 }
 .git p {
   padding-right: 20px;
@@ -568,4 +610,554 @@ footer {
 }
 footer a {
   color: #000000;
+}
+
+@media (max-width: 1085px) {
+  .service-menu {
+    display: block;
+    padding-top: 60px;
+  }
+  .service-btns {
+    padding-right: 0px;
+  }
+  .contacts h2 {
+    min-width: 191px;
+  }
+  .city {
+    padding: 17px 33px 30px 33px;
+  }
+}
+
+@media (max-width: 964px) {
+  .contacts {
+    flex-direction: column;
+  }
+  .contacts h2 {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+  }
+  .contacts img {
+    order: 3;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 22px;
+  }
+  .contacts img.open{
+    padding-top: 16px;
+  }
+  .citys {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .select-wrapper {
+    padding-top: 98px;
+  }
+  .city {
+    margin: 61px auto 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 668px;
+    margin: 0 auto;
+  }
+  h2 {
+    font-size: 35px;
+  }
+  .offer h1 {
+    font-size: 35px;
+    padding-top: 0;
+  }
+  .header{
+    padding: 35px 0;
+  }
+  .welcome {
+    flex-direction: row-reverse;
+    padding: 40px 0 70px 0;
+  }
+  .offer p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    max-width: 341px;
+    padding: 29px 0 33px 3px;
+  }
+  .welcome img {
+    max-width: 280px;
+  }
+  .about {
+    display: block;
+    padding: 0 0 96px 0;
+  }
+  .about-txt h2 {
+    text-align: center;
+    margin: auto;
+    padding-top: 40px;
+  }
+  .about-txt p {
+    margin: auto;
+    max-width: 100%;
+    padding-top: 51px;
+  }
+  .about img {
+    max-width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 68px;
+  }
+  .service-menu {
+    display: block;
+    padding-top: 60px;
+  }
+  .service-btns {
+    display: flex;
+    padding-right: 0;
+    padding-top: 42px;
+  }
+  button{
+    margin-left: 42px;
+  }
+  .card {
+    max-width: 280px;
+    margin-bottom: 40px;
+  }
+  .card img{
+    min-height: 350px;
+  }
+  .desktop-card{
+    display: none;
+  }
+  .tablet-card{
+    display: block;
+  }
+  .card-description {
+    max-width: 201px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4px;
+  }
+  .card-name {
+    padding: 11px 0 10px 0;
+}
+  .description {
+    padding-bottom: 16px;
+}
+  .cards {
+    padding: 40px 0 32px 0;
+  }
+  .gardeners p {
+    font-size: 25px;
+    padding-top: 141px;
+    padding-bottom: 27px;
+    line-height: 35px;
+    max-width: 296px;
+  }
+  .gardeners img {
+    padding-top: 27px;
+  }
+  .tab-border {
+    margin-top: 52px;
+    padding:34px 41px 0px 41px;
+  }
+  .prices {
+    padding-bottom: 83px;
+  }
+  .prices h2{
+    padding-left: 14px;
+  }
+  .contacts {
+    padding-top: 33px;
+  }
+  .select-wrapper.open{
+    padding-top: 59px;
+}
+  .footer {
+    display: block;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 17px;
+    padding-bottom: 2px;
+  }
+  .footer a {
+    margin: 16px 0;
+    text-align: center;
+  }
+  .footer-rs {
+    padding-left: 5px;
+  }
+  .git p {
+    padding-right: 20px;
+    margin: 16px 0;
+  }
+  .git {
+    padding-left: 25px;
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px;
+    padding-top: 8px;
+  }
+  .links img {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 653px) {
+  ul.nav {
+    min-width: 350px;
+    display: flex;
+    justify-content: space-around;
+  }
+  ul.nav li {
+    margin-left: auto;
+  }
+  .welcome img {
+    max-width: 250px;
+  }
+  .service-btns {
+    display: flex;
+    padding-right: 0;
+    padding-top: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .service-btns button {
+    margin: 9px 0 0 0;
+  }
+  .card{
+    margin: 0 auto;
+  }
+  .prices {
+    display: block;
+  }
+  .prices h2 {
+    text-align: center;
+    max-width: 330px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+  .tab {
+    max-width: 100%;
+    margin: 14px auto 0 auto;
+  }
+  .tab-title {
+    padding-left: 30px;
+    font-size: 15px;
+  }
+  .accordion {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .tab-border {
+    max-width: 54%;
+    margin: 0 auto;
+    padding: 15px 22px 29px 22px;
+  }
+  .gardeners p {
+    padding-top: 19px;
+    margin: 0 auto;
+  }
+  .gardeners button {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 22px;
+    font-size: 15px;
+  }
+  .gardeners img {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 330px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  .header {
+    max-width: 330px;
+    padding: 27px 0;
+  }
+  nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding-right: 20px;
+    background: #edf2ec;
+    height: 100%;
+    z-index: 5;
+    transform: translateX(100%);
+    transition: all 1s;
+  }
+  nav.active {
+    transform: translateX(0);
+    transition: all 1s;
+  }
+  .logo img {
+    padding-top: 10px;
+  }
+  ul.nav li {
+    max-width: 70px;
+  }
+  ul.nav li a {
+    padding-right: 0;
+    margin-right: 0;
+  }
+  ul.nav {
+    opacity: 0;
+    max-width: 80px;
+    max-width: 80px;
+    min-width: 80px;
+    margin: auto;
+    margin-top: 40px;
+    z-index: 6;
+    pointer-events: none;
+  }
+  ul.nav.active {
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+  }
+  .close-icon img {
+    display: block;
+    padding-left: 50px;
+    height: 20px;
+    margin-bottom: 10px;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-width: 320px;
+    max-width: 480px;
+    background-color: #edf2ec;
+    width: 100%;
+    z-index: 5;
+  }
+  header .container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  main {
+    padding-top: 82px;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+  .burger-menu.active {
+    display: none;
+  }
+  #blanket {
+    display: none;
+    background-color: #111;
+    opacity: 0.65;
+    position: absolute;
+    z-index: 4;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+  }
+  #blanket.active {
+    display: block;
+  }
+  .offer h1 {
+    font-size: 25px;
+    line-height: 35px;
+  }
+  .offer p {
+    padding: 19px 0 26px 0px;
+}
+.welcome {
+  padding: 40px 0 23px 0;
+}
+  .welcome img {
+    display: none;
+  }
+  .offer p {
+    max-width: 330px;
+  }
+  .offer button {
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+  .welcome img {
+    max-width: 280px;
+  }
+  .about {
+    padding: 0 0 31px 0;
+}
+  .about p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .about-txt h2 {
+    padding-top: 30px;
+}
+.about-txt p {
+  padding-top: 16px;
+}
+  .about img {
+    max-width: 150px;
+    max-height: 147px;
+    padding-top: 3px;
+  }
+  .service-btns button {
+    padding: 6px 28px;
+    font-size: 15px;
+    line-height: 20px;
+    width: 121px;
+    margin: 11px 0 0 0;
+}
+  .service-btns {
+    display: flex;
+    padding-right: 0;
+    padding-top: 30px;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+  .service-menu {
+    display: block;
+    padding-top: 30px;
+  }
+  .service-menu h2 {
+    max-width: 187px;
+  }
+  .service-btns .second-btn {
+    margin-left: 10px;
+  }
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card-name {
+    padding: 13px 0 8px 0;
+}
+.card {
+  margin-top: 35px;
+}
+.first-card{
+  margin-top: 0;
+}
+.description {
+  padding-bottom: 18px;
+}
+.cards {
+  padding: 40px 0 29px 0;
+}
+.prices h2 {
+  padding-left: 0;
+  padding: 15px 0 26px 0;
+}
+.gardeners p {
+  padding: 18px 0 20px 0;
+  text-align: center;
+  font-size: 20px;
+  width: 230px;
+}
+.gardeners button {
+  padding: 6px 22px;
+  height: 34px;
+  width: 121px;
+}
+.prices {
+  padding-bottom: 40px;
+}
+.contacts h2 {
+  font-size: 25px;
+}
+.contacts {
+  padding-top: 9px;
+  text-align: center;
+}
+.select-trigger {
+  min-width: 263px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 18px;
+}
+.open .select-trigger { 
+  min-width: 263px;
+  margin-left: 14px;
+  margin-right: 14px;
+  padding: 0 18px;
+}
+.custom-options {
+  margin: 0 14px;
+  min-width: 298px;
+}
+.custom-option {
+  text-align: left;
+}
+.select-wrapper {
+  padding-top: 72px;
+  padding-bottom: 0px;
+}
+.select-wrapper.open {
+  padding-bottom: 49px;
+  padding-top: 33px;
+}
+.arrow {
+  margin-right: 4px;
+}
+.contacts img {
+  max-width: 100px;
+  padding-top: 0;
+  margin: -114px auto 0 auto;
+}
+.contacts img.open {
+  display: none;
+}
+.city {
+  margin: 0 23px 33px 25px;
+  padding: 33px 21px 22px 21px;
+}
+.info button {
+    margin: 8px 0 0 -58px;
+}
+.field{
+  max-width: 70px;
+}
+.field p {
+  text-align: right;
+  line-height: 20px;
+  height: 40px;
+}
+.info p {
+  line-height: 20px;
+  height: 40px;
+  text-align: left;
+  max-width: 160px;
+  padding-left: 10px;
+}
+.city-show {
+  display: flex;
+}
+.footer {
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+.git {
+  padding-left: 23px;
+}
+.git p {
+  padding-right: 22px;
+}
+.footer a {
+  margin: 4px 0;
+}
+.git a {
+  margin: 16px 0;
+}
 }
