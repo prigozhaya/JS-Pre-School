@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@200;300;400;500;600;700&family=Montserrat:wght@500;700&display=swap"
-      rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@200;400;700&family=Montserrat:wght@500;700&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <link type="Image/x-icon" href="img/favicon.ico" rel="icon" />
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link type="Image/x-icon" href="img/favicon.ico" rel="icon">
     <title>Plants</title>
   </head>
   <body>
+    <div id="blanket"></div>
     <header>
       <div class="container">
         <div class="header" id="header">
-          <a href="#" class="logo"><img src="img/logo.svg" alt="Plants" /></a>
+          <a href="#" class="logo"><img src="img/logo.svg" alt="Plants"></a>
+          <img src="img/burger.svg" alt="" class="burger-menu">
           <nav>
             <ul class="nav">
-              <li style="padding-left: 0px"><a href="#home">Home</a></li>
-              <li><a href="#about">About us</a></li>
-              <li><a href="#service">Service</a></li>
-              <li><a href="#price">Price</a></li>
-              <li><a href="#contacts">Contacts</a></li>
+              <li class="close-icon"><img src="img/close.svg" alt=""></li>
+              <li class="first-nav-li menu-link"><a href="#home">Home</a></li>
+              <li><a href="#about" class="menu-link">About us</a></li>
+              <li><a href="#service" class="menu-link">Service</a></li>
+              <li><a href="#price" class="menu-link">Price</a></li>
+              <li><a href="#contacts" class="menu-link">Contacts</a></li>
             </ul>
           </nav>
         </div>
@@ -39,9 +42,9 @@
 
     <main>
       <div class="container">
-        <div class="welcome" id="home">
+        <section class="welcome" id="home">
           <div>
-            <img src="img/leafs.png" alt="Leafs" />
+            <img src="img/leafs.png" alt="Leafs">
           </div>
           <div class="offer">
             <h1>We grow <span style="color: #499a18">plants</span> and give you oxygen</h1>
@@ -52,13 +55,12 @@
             </p>
             <button>LEARN MORE</button>
           </div>
-        </div>
+        </section>
       </div>
-
 
       <div class="wraper">
         <div class="container">
-          <div class="about" id="about">
+          <section class="about" id="about">
             <div class="about-txt">
               <h2>We are <span style="color: #e06733">professional experienced</span> gardeners</h2>
               <p>
@@ -71,15 +73,15 @@
               </p>
             </div>
             <div>
-              <img src="img/houseplant1.png" alt="houseplant" />
+              <img src="img/houseplant1.png" alt="houseplant">
             </div>
-          </div>
+          </section>
         </div>
       </div>
 
 
       <div class="container">
-        <div class="service" id="service">
+        <section class="service" id="service">
           <div class="service-menu">
             <h2>Service and our projects</h2>
             <div class="service-btns">
@@ -90,8 +92,9 @@
           </div>
 
           <div class="cards">
-            <div class="card">
-              <img src="img/card1.png" alt="Garden care" />
+            <div class="card first-card">
+              <img src="img/card1.png" alt="Garden care" class="desktop-card">
+              <img src="img/tablet_card1.png" alt="Garden care" class="tablet-card">
               <div class="description">
                 <p class="card-name">Garden care</p>
                 <p class="card-description">
@@ -100,7 +103,8 @@
               </div>
             </div>
             <div class="card">
-              <img src="img/card2.png" alt="Planting" />
+              <img src="img/card2.png" alt="Planting" class="desktop-card">
+              <img src="img/tablet_card2.png" alt="Planting" class="tablet-card">
               <div class="description">
                 <p class="card-name">Planting</p>
                 <p class="card-description">
@@ -109,7 +113,8 @@
               </div>
             </div>
             <div class="card">
-              <img src="img/card3.png" alt="Lawn care" />
+              <img src="img/card3.png" alt="Lawn care" class="desktop-card">
+              <img src="img/tablet_card3.png" alt="Lawn care" class="tablet-card">
               <div class="description">
                 <p class="card-name">Lawn care</p>
                 <p class="card-description">
@@ -118,7 +123,8 @@
               </div>
             </div>
             <div class="card">
-              <img src="img/card4.png" alt="Planting" />
+              <img src="img/card4.png" alt="Planting" class="desktop-card">
+              <img src="img/tablet_card4.png" alt="Planting" class="tablet-card">
               <div class="description">
                 <p class="card-name">Planting</p>
                 <p class="card-description">
@@ -127,7 +133,8 @@
               </div>
             </div>
             <div class="card">
-              <img src="img/card5.png" alt="Garden care" />
+              <img src="img/card5.png" alt="Garden care" class="desktop-card">
+              <img src="img/tablet_card5.png" alt="Garden care" class="tablet-card">
               <div class="description">
                 <p class="card-name">Garden care</p>
                 <p class="card-description">
@@ -136,7 +143,8 @@
               </div>
             </div>
             <div class="card">
-              <img src="img/card6.png" alt="Planting" />
+              <img src="img/card6.png" alt="Planting" class="desktop-card">
+              <img src="img/tablet_card6.png" alt="Planting" class="tablet-card">
               <div class="description">
                 <p class="card-name">Planting</p>
                 <p class="card-description">
@@ -145,13 +153,13 @@
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
 
 
       <div class="wraper">
         <div class="container">
-          <div class="prices" id="price">
+          <section class="prices" id="price">
             <div>
               <h2>Prices</h2>
               <div class="tab-border">
@@ -161,11 +169,11 @@
                       type="checkbox"
                       id="tab1"
                       name="tab-group"
-                      class="checkbox" />
+                      class="checkbox">
                     <label for="tab1" class="tab-title">Basics</label>
                     <div class="tab-content">
                       <div class="accordion-content">
-                        <hr />
+                        <hr>
                         <p class="price-description">
                           Release of Letraset sheets containing Lorem Ipsum passages, and more recently
                         </p>
@@ -191,10 +199,10 @@
                       type="checkbox"
                       id="tab2"
                       name="tab-group"
-                      class="checkbox" />
+                      class="checkbox">
                     <label for="tab2" class="tab-title">Standard</label>
                     <div class="tab-content">
-                      <hr />
+                      <hr>
                       <p class="price-description">
                         Release of Letraset sheets containing Lorem Ipsum
                         passages, and more recently
@@ -220,10 +228,10 @@
                       type="checkbox"
                       id="tab3"
                       name="tab-group"
-                      class="checkbox" />
+                      class="checkbox">
                     <label for="tab3" class="tab-title">Pro care</label>
                     <div class="tab-content">
-                      <hr />
+                      <hr>
                       <p class="price-description">
                         Release of Letraset sheets containing Lorem Ipsum
                         passages, and more recently
@@ -246,27 +254,27 @@
             </div>
 
             <div class="gardeners">
-              <h2>
+              <p>
                 Our best <span style="color: #499a18">gardeners</span> are ready
                 to help you
-              </h2>
+              </p>
               <button class="btn">Contact us</button>
-              <img src="img/leafs2.png" alt="Leafs" />
+              <img src="img/leafs2.png" alt="Leafs">
             </div>
-          </div>
+          </section>
         </div>
       </div>
 
 
       <div class="container">
-        <div class="contacts" id="contacts">
-          <img src="img/contact_woman.png" alt="Leafs" />
+        <section class="contacts" id="contacts">
+          <img src="img/contact_woman.png" alt="Leafs">
           <h2>Contact us</h2>
           <div class="citys">
             <div class="select-wrapper">
               <div class="select">
                 <div class="select-trigger">
-                  <span>City</span>
+                  <span class="placeholder">City</span>
                   <div class="arrow"></div>
                 </div>
                 <div class="custom-options">
@@ -283,19 +291,19 @@
                       style="padding-top: 0">
                       Canandaigua, NY
                     </span>
-                    <hr class="option-hr" />
+                    <hr class="option-hr">
                     <span class="custom-option" data-value="NY">
                       New York City
                     </span>
-                    <hr class="option-hr" />
+                    <hr class="option-hr">
                     <span class="custom-option" data-value="Yonkers">
                       Yonkers, NY
                     </span>
-                    <hr class="option-hr" />
+                    <hr class="option-hr">
                     <span class="custom-option" data-value="Sherrill">
                       Sherrill, NY
                     </span>
-                    <hr class="option-hr" />
+                    <hr class="option-hr">
                   </div>
                 </div>
               </div>
@@ -311,12 +319,12 @@
               <div class="info">
                 <p id="city"></p>
                 <p id="phone"></p>
-                <p id="adress"></p>
+                <p id="address"></p>
                 <button class="btn">Call us</button>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </main>
 
@@ -332,13 +340,13 @@
           <a href="https://rs.school/js/" class="footer-rs">
             Rolling Scopes School
           </a>
-           <div class="links">
-            <ul>
-            <li><a href="#" style="padding-left: 0"><img src="img/inst1.svg" alt="instagram"/></a></li>
-            <li><a href="#"><img src="img/fb1.svg" alt="facebook" /></a></li>
-            <li><a href="#"><img src="img/tw1.svg" alt="twitter" /></a></li>
-            <li><a href="#"><img src="img/pinterest1.svg" alt="pinterest" /></a></li>
-          </ul>
+          <div class="links">
+            <a href="#" style="padding-left: 0">
+              <img src="img/inst1.svg" alt="instagram">
+            </a>
+            <a href="#"><img src="img/fb1.svg" alt="facebook"></a>
+            <a href="#"><img src="img/tw1.svg" alt="twitter"></a>
+            <a href="#"><img src="img/pinterest1.svg" alt="pinterest"></a>
           </div>
         </footer>
       </div>
