@@ -80,10 +80,6 @@ ul.nav li {
   display: inline;
   margin-left: 43px;
 }
-ul li {
-  display: inline;
-  list-style-type:none;
-}
 ul.nav {
   margin: 0;
 }
@@ -182,6 +178,11 @@ ul.nav li a:hover {
   padding-right: 215px;
   padding-top: 28px;
 }
+.service-btns .btn.active {
+  background-color: #e06733;
+  color: #fff;
+  transition: background-color 0.5s, color 0.5s;
+}
 .first-btn {
   margin-left: 0;
 }
@@ -230,6 +231,10 @@ ul.nav li a:hover {
   width: auto;
   margin-bottom: 55px;
   transition: all 1s;
+  
+}
+.card.blur {
+  filter: blur(3px);
 }
 .card:hover {
   -webkit-transform: scale(1.05);
@@ -367,7 +372,7 @@ ul.nav li a:hover {
   width: 16px;
   height: 16px;
 }
-.tab :checked ~ .tab-content {
+.tab :checked ~ .tab-content{
   padding: 12px 40px;
   max-height: 1000px;
   visibility: visible;
@@ -587,7 +592,7 @@ ul.nav li a:hover {
 footer {
   background: #ffffff;
   margin: 0;
-  padding: 27px 0;
+  padding: 45px 0;
   display: flex;
   justify-content: space-between;
   color: #000000;
@@ -602,11 +607,11 @@ footer {
   padding-top: 2px;
 }
 .links img {
-  padding-left: 14px;
+  padding-left: 20px;
   padding-top: 1px;
 }
 .footer-rs {
-  padding-left: 70px;
+  padding-left: 37px;
 }
 .git p {
   padding-right: 20px;
