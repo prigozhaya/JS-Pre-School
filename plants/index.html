@@ -85,14 +85,14 @@
           <div class="service-menu">
             <h2>Service and our projects</h2>
             <div class="service-btns">
-              <button class="btn first-btn">Gardens</button>
-              <button class="btn second-btn">Lawn</button>
-              <button class="btn">Planting</button>
+              <button class="btn first-btn" data-value="gardens">Gardens</button>
+              <button class="btn second-btn" data-value="lawn">Lawn</button>
+              <button class="btn third-btn" data-value="planting">Planting</button>
             </div>
           </div>
 
           <div class="cards">
-            <div class="card first-card">
+            <div class="card first-card gardens">
               <img src="img/card1.png" alt="Garden care" class="desktop-card">
               <img src="img/tablet_card1.png" alt="Garden care" class="tablet-card">
               <div class="description">
@@ -102,7 +102,7 @@
                 </p>
               </div>
             </div>
-            <div class="card">
+            <div class="card planting">
               <img src="img/card2.png" alt="Planting" class="desktop-card">
               <img src="img/tablet_card2.png" alt="Planting" class="tablet-card">
               <div class="description">
@@ -112,7 +112,7 @@
                 </p>
               </div>
             </div>
-            <div class="card">
+            <div class="card lawn">
               <img src="img/card3.png" alt="Lawn care" class="desktop-card">
               <img src="img/tablet_card3.png" alt="Lawn care" class="tablet-card">
               <div class="description">
@@ -122,7 +122,7 @@
                 </p>
               </div>
             </div>
-            <div class="card">
+            <div class="card planting">
               <img src="img/card4.png" alt="Planting" class="desktop-card">
               <img src="img/tablet_card4.png" alt="Planting" class="tablet-card">
               <div class="description">
@@ -132,7 +132,7 @@
                 </p>
               </div>
             </div>
-            <div class="card">
+            <div class="card gardens">
               <img src="img/card5.png" alt="Garden care" class="desktop-card">
               <img src="img/tablet_card5.png" alt="Garden care" class="tablet-card">
               <div class="description">
@@ -142,7 +142,7 @@
                 </p>
               </div>
             </div>
-            <div class="card">
+            <div class="card planting">
               <img src="img/card6.png" alt="Planting" class="desktop-card">
               <img src="img/tablet_card6.png" alt="Planting" class="tablet-card">
               <div class="description">
@@ -187,7 +187,7 @@
                             >$15</span
                           >/ per hour
                         </p>
-                        <button>Order</button>
+                        <a href="#contacts"><button>Order</button></a>
                       </div>
                     </div>
                   </div>
@@ -217,7 +217,7 @@
                           >$25</span
                         >/ per hour
                       </p>
-                      <button>Order</button>
+                      <a href="#contacts"><button>Order</button></a>
                     </div>
                   </div>
                 </div>
@@ -246,7 +246,7 @@
                           >$35</span
                         >/ per hour
                       </p>
-                      <button>Order</button>
+                      <a href="#contacts"><button>Order</button></a>
                     </div>
                   </div>
                 </div>
@@ -320,7 +320,7 @@
                 <p id="city"></p>
                 <p id="phone"></p>
                 <p id="address"></p>
-                <button class="btn">Call us</button>
+                <a id="call"><button class="btn" >Call us</button></a>
               </div>
             </div>
           </div>
@@ -340,7 +340,6 @@
           <a href="https://rs.school/js/" class="footer-rs">
             Rolling Scopes School
           </a>
-
           <div class="links">
             <a href="#" style="padding-left: 0">
               <img src="img/inst1.svg" alt="instagram">
