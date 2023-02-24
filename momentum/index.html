@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="track"></div>
+      <audio class="audio" src="audio/Boom Bap Flick.mp3"></audio>
+      <div class="bar-container">
+        <div class="progress-container">
+          <div class="progress-bar">
+          </div>
+        </div>
+        <div class="audio-time">
+        </div>
+      </div>
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon"></button>
+        <button class="play-next player-icon"></button>
+        <button class="sound player-icon"></button>
+        <div class="volume progress-container">
+          <div class="volume progress-bar">
+          </div>
+        </div>
+      </div> 
+     
+      <ul class="play-list">
+        <li class="play-item item-active">Boom Bap Flick</li>
+        <li class="play-item">Deck The Halls</li>
+        <li class="play-item">Here it Comes</li>
+        <li class="play-item">Ice & Fire</li>
+      </ul>
+    </div> 
+    
+    <div class="right-container">
+      <div>
+        <img src="assets/svg/settings.svg" alt="" class="settings-img">
+        <div class="all-settings hide">
+      <div class="modul-settings">
+        <div class="setting-menu">
+          <p class="settings-point" id="modules"></p>
+          <div class="modules">
+            <div class="modul">
+             <input type="checkbox" id="weather-modul"
+             name="modules" value="weather" checked>
+             <label for="weather-modul" id="weather-lable"></label>
+          </div>
+            <div class="modul">
+             <input type="checkbox" id="timer-modul"
+             name="modules" value="timer" checked>
+             <label for="timer-modul" id="timer-lable"></label>
+          </div>
+            <div class="modul">
+             <input type="checkbox" id="player-modul"
+             name="modules" value="player" checked>
+             <label for="player-modul" id="player-lable"></label>
+          </div>
+            <div class="modul">
+             <input type="checkbox" id="quotes-modul"
+             name="modules" value="quotes" checked>
+             <label for="quotes-modul" id="quotes-lable"></label>
+          </div>
+            <div class="modul">
+             <input type="checkbox" id="greetings-modul"
+             name="modules" value="greetings" checked>
+             <label for="greetings-modul" id="greetings-lable"></label>
+          </div>
+            <div class="modul">
+             <input type="checkbox" id="сalendar-modul"
+             name="modules" value="сalendar" checked>
+             <label for="сalendar-modul" id="сalendar-lable"></label>
+          </div>
+        
+        </div>
+      </div>
+      </div>
+
+      <div class="settings">
+      <div class="setting-menu">
+        <p class="settings-point" id="language"></p>
+      <form class="lang">
+         <label class="switch">
+          <input type="checkbox" class="lang-checkbox">
+          <span class="slider">by en</span>
+        </label>
+        <p></p>
+      </form>
+      <form class="image-source">
+        <p class="settings-point" id="img-source"></p>
+        <div class="sources">
+          <div class="source-point">
+          <input type="radio" id="GitHub"
+           name="image-source" value="GitHub" checked>
+          <label for="GitHub">GitHub</label>
+          </div>
+          <div class="source-point">
+          <input type="radio" id="Unsplash"
+           name="image-source" value="Unsplash">
+          <label for="Unsplash">Unsplash</label >
+      </div>
+      <div class="source-point">
+          <input type="radio" id="Flickr"
+           name="image-source" value="Flickr" >
+          <label for="Flickr">Flickr</label>
+       </div> 
+      <div class="source-point">
+          <input type="text" placeholder="" id="tag" class="tag">
+       </div> 
+       <div class="source-point" >
+        <input type="button" class="button" id="refresh-img" value="Refresh"></input>
+      </div>
+      </div>
+      </form>
+    
+    </div>
+    </div>
+  </div>
+  </div>
+    <div class="weather">
+      <input type="text" class="city" id="city" placeholder=""/>
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time" id="time"></time>
+    <date class="date" id="date"></date>
+    <div class="greeting-container">
+      <span class="greeting" id="greeting"></span>
+      <input type="text" class="name" placeholder="" id="name"/>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="quotes">
+    <button class="change-quote"></button>
+    <div>
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+  </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
