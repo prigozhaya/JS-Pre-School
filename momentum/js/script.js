@@ -50,6 +50,7 @@ const playNext = document.querySelector(".play-next");
 const sound = document.querySelector(".sound");
 const audio = document.querySelector(".audio");
 const track = document.querySelector(".track");
+const trackName = document.querySelector(".track-name");
 const playItem = document.querySelectorAll(".play-item");
 const plaprogressContaineryer = document.querySelector(".progress-container");
 const volumePgressContaineryer = document.querySelector(".volume.progress-container");
@@ -74,7 +75,7 @@ const translation={
       "wind_metric": "m/s",
       "humidity": "Humidity:",
       "city_placeholder": "[Enter city]",
-      "music_play": "Now playing",
+      "music_play": "Now playing: ",
       "language": "Language",
       "modules": "Modules",
       "image_source": "Image source",
@@ -101,7 +102,7 @@ const translation={
       "wind_metric": "м/с",
       "humidity": "Вільготнасць:",
       "city_placeholder": "[Увядзіце горад]",
-      "music_play": "Iграе",
+      "music_play": "Iграе: ",
       "language": "Мова",
       "modules": "Модулі",
       "image_source": "Крыніца карцінак",
@@ -371,6 +372,7 @@ if(city.value==="Минск" || city.value==="London"){
   city.value = langCheckbox.checked === false?"Минск":"London";
 }
 
+track.innerHTML = `${translation[currentLang].music_play}`;
 language.textContent=translation[currentLang].language;
 modules.textContent=translation[currentLang].modules;
 imgSource.textContent=translation[currentLang].image_source;
@@ -389,7 +391,6 @@ setPlaceholder();
  showGreeting();
  showDate();
  setCityPlaceholder();
- loadMetaAudio(songs[songIndex]);
  getWeather()
  configureModules()
 }
@@ -573,7 +574,7 @@ getQuotes(quotes);
 function loadMetaAudio(song) {
   let currentLang = langCheckbox.checked === false ? 'be' : 'en';
   
-  track.innerHTML = `${translation[currentLang].music_play}: ${song}`;
+  trackName.innerHTML = ` ${song}`;
   audio.src = `assets/audio/${song}.mp3`;
 }
 loadMetaAudio(songs[songIndex]);
