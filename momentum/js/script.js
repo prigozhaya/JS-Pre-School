@@ -727,7 +727,7 @@ for (let item of playItem) {
     } else {
       for (let i of playItem) {
         i.classList.remove("item-active");
-        sound.style.backgroundImage = `url("../assets/svg/charm_sound-up.svg")`;
+        sound.style.backgroundImage = `url("assets/svg/charm_sound-up.svg")`;
       }
       this.classList.add("item-active");
 
