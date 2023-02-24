@@ -705,12 +705,12 @@ volumePgressContaineryer.addEventListener("click", controlVolume);
 function muteSound() {
   if (audio.volume > 0) {
     audio.volume = 0;
-    sound.style.backgroundImage = `url("../assets/svg/charm_sound-mute.svg")`;
+    sound.style.backgroundImage = `url("assets/svg/charm_sound-mute.svg")`;
   } else {
     let barWidth = volumeProgressBar.clientWidth;
     let containeryerWidth = volumePgressContaineryer.clientWidth;
     audio.volume = barWidth / containeryerWidth;
-    sound.style.backgroundImage = `url("../assets/svg/charm_sound-up.svg")`;
+    sound.style.backgroundImage = `url("assets/svg/charm_sound-up.svg")`;
   }
 }
 
