@@ -288,6 +288,10 @@ input:checked + .slider:before {
   text-align: start;
 }
 
+.track-play{
+display: flex;
+}
+
 .volume.progress-container{
   height: 5px;
 width: 50px;
