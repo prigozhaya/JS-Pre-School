@@ -209,7 +209,7 @@ input:checked + .slider:before {
 }
 
 .play-item::before {
-  content:url("/assets/svg/play-item.svg");  
+  content:url("../assets/svg/play-item.svg");  
   position: absolute;
   left: 8px;
   top: 2px;
@@ -218,11 +218,11 @@ input:checked + .slider:before {
 
 .item-active::before {
   color: #212121;
-  content:url("/assets/svg/play-item-active.svg");  
+  content:url("../assets/svg/play-item-active.svg");  
 }
 .item-active.pause-item::before {
   color: #212121;
-  content:url("/assets/svg/pause-item-active.svg");  
+  content:url("../assets/svg/pause-item-active.svg");  
 }
 .item-active{
   color: #212121;

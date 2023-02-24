@@ -705,12 +705,12 @@ volumePgressContaineryer.addEventListener("click", controlVolume);
 function muteSound() {
   if (audio.volume > 0) {
     audio.volume = 0;
-    sound.style.backgroundImage = `url("../assets/svg/charm_sound-mute.svg")`;
+    sound.style.backgroundImage = `url("assets/svg/charm_sound-mute.svg")`;
   } else {
     let barWidth = volumeProgressBar.clientWidth;
     let containeryerWidth = volumePgressContaineryer.clientWidth;
     audio.volume = barWidth / containeryerWidth;
-    sound.style.backgroundImage = `url("../assets/svg/charm_sound-up.svg")`;
+    sound.style.backgroundImage = `url("assets/svg/charm_sound-up.svg")`;
   }
 }
 
@@ -727,7 +727,6 @@ for (let item of playItem) {
     } else {
       for (let i of playItem) {
         i.classList.remove("item-active");
-        sound.style.backgroundImage = `url("../assets/svg/charm_sound-up.svg")`;
       }
       this.classList.add("item-active");
 
@@ -741,6 +740,7 @@ for (let item of playItem) {
         }
       }
     }
+
   });
 }
 //translate--------------------------------------------------------------------------------------------------------------------------------------------
