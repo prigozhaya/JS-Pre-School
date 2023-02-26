@@ -10,20 +10,21 @@
 </head>
 <body>
   <header class="header">
-    <div class="player">
-      <div class="track-play"> 
-        <p class="track"></p> 
-        <p class="track-name"></p>
-      </div>
-      <audio class="audio" src="audio/Boom Bap Flick.mp3"></audio>
-      <div class="bar-container">
-        <div class="progress-container">
-          <div class="progress-bar">
+    <div class="left-container">
+      <div class="player">
+        <div class="track-play"> 
+          <p class="track"></p> 
+          <p class="track-name"></p>
+        </div>
+        <audio class="audio" src="audio/Boom Bap Flick.mp3"></audio>
+        <div class="bar-container">
+          <div class="progress-container">
+            <div class="progress-bar">
+            </div>
+          </div>
+          <div class="audio-time">
           </div>
         </div>
-        <div class="audio-time">
-        </div>
-      </div>
       <div class="player-controls">
         <button class="play-prev player-icon"></button>
         <button class="play player-icon"></button>
@@ -42,7 +43,23 @@
         <li class="play-item">Ice & Fire</li>
       </ul>
     </div> 
-    
+    <div class="to-do-list"> 
+      <div class="todo-list"><p class="todo-list-block">ToDoList</p></div>
+    <div class="todo-task">
+      <div>
+      </div>
+      <ul class="task-list" id="task-list">
+ 
+      </ul>
+    </div>
+      <div class="input-task">
+        <input type="text" placeholder="" id="task" class="task">
+        <input type="button" class="button" id="add-task" value="add-task"></input>
+
+      </div>
+    </div>
+    </div>
+  
     <div class="right-container">
       <div>
         <img src="assets/svg/settings.svg" alt="" class="settings-img">
@@ -80,6 +97,11 @@
              <input type="checkbox" id="сalendar-modul"
              name="modules" value="сalendar" checked>
              <label for="сalendar-modul" id="сalendar-lable"></label>
+          </div>
+            <div class="modul">
+             <input type="checkbox" id="todo-list-modul"
+             name="modules" value="todo-list" checked>
+             <label for="todo-list-modul" id="todo-list-lable"></label>
           </div>
         
         </div>
