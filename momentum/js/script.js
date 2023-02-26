@@ -15,6 +15,7 @@ const playerLable = document.getElementById("player-lable");
 const quotesLable = document.getElementById("quotes-lable");
 const greetingsLable = document.getElementById("greetings-lable");
 const сalendarLable = document.getElementById("сalendar-lable");
+const todoListLable = document.getElementById("todo-list-lable");
 const GitHub = document.getElementById("GitHub");
 const Unsplash = document.getElementById("Unsplash");
 const Flickr = document.getElementById("Flickr");
@@ -26,9 +27,11 @@ const playerModul = document.getElementById("player-modul");
 const quotesModul = document.getElementById("quotes-modul");
 const greetingsModul = document.getElementById("greetings-modul");
 const сalendarModul = document.getElementById("сalendar-modul");
+const todoListModul = document.getElementById("todo-list-modul");
 const allSettings = document.querySelector(".all-settings");
 const weather = document.querySelector(".weather");
 const input = document.querySelector(".name");
+const toDoList = document.querySelector(".to-do-list");
 const error = document.querySelector(".weather-error");
 const body = document.querySelector("body");
 const slideNext = document.querySelector(".slide-next");
@@ -59,6 +62,10 @@ const volumeProgressBar = document.querySelector(".volume.progress-bar");
 const playList = document.querySelector(".play-list");
 const audioTime = document.querySelector(".audio-time");
 const langCheckbox = document.querySelector(".lang-checkbox");
+const todoListBlock = document.querySelector(".todo-list-block");
+const taskList = document.getElementById("task-list");
+const task = document.getElementById("task");
+const addTask = document.getElementById("add-task");
 const date = new Date();
 let translations={};
 const translation={
@@ -84,9 +91,12 @@ const translation={
       "player": "Audio player",
       "quotes": "Quotes",
       "greetings": "Greetings",
-      "calendar_day": "Сalendar day",
+      "calendar_day": "Сalendar",
+      "todo_list": "To do list",
       "tag": " tag",
-      "refresh": "Refresh"
+      "refresh": "Refresh",
+      "toDoList": "To do list",
+      "addTask": "Add task",
       
   },
   "be":{
@@ -111,9 +121,12 @@ const translation={
       "player": "Аўдыё плэер",
       "quotes": "Цытаты",
       "greetings": "Прывітанне",
-      "calendar_day": "Каляндарны дзень",
+      "calendar_day": "Каляндар",
+      "todo_list": "Cпіс спраў",
       "tag": " тэг",
-      "refresh": "Абнавіць"
+      "refresh": "Абнавіць",
+      "toDoList": "Cпіс спраў",
+      "addTask": "Дадаць"
   }
 };
 
@@ -125,6 +138,7 @@ const songs = [
 ];
 let songIndex = 0;
 let isPlay = false;
+
 
 //before unload-----------------------------------------------------------------------------------------------------------------------------------
 if (localStorage.getItem("city") === null) {
@@ -139,6 +153,8 @@ playerModul.checked = localStorage.getItem("playerModul")==="false" ? false:true
 quotesModul.checked = localStorage.getItem("quotesModul")==="false" ? false:true;
 greetingsModul.checked = localStorage.getItem("greetingsModul")==="false" ? false:true;
 сalendarModul.checked = localStorage.getItem("сalendarModul")==="false" ? false:true;
+todoListModul.checked = localStorage.getItem("todoListModul")==="false" ? false:true;
+
 
 
 if(langCheckbox.checked === false){
@@ -149,6 +165,7 @@ if(langCheckbox.checked === false){
 name.value = localStorage.getItem("name");
 tag.value = localStorage.getItem("tag");
 
+  taskList.innerHTML=localStorage.getItem('toDoList')
 
 //placeholder--------------------------------------------------------------------------------------------------------------------------------------
 function setPlaceholder(){
@@ -162,6 +179,7 @@ input.addEventListener("keydown", (e) => {
   setPlaceholder()
 });
 
+
 //local storage-------------------------------------------------------------------------------------------------------------------------------------
 function setLocalStorage() {
   localStorage.setItem("name", name.value);
@@ -174,7 +192,10 @@ function setLocalStorage() {
   localStorage.setItem("quotesModul", quotesModul.checked );
   localStorage.setItem("greetingsModul", greetingsModul.checked );
   localStorage.setItem("сalendarModul", сalendarModul.checked );
-    for (var i = 0; i < imageSource.length; i++) {
+  localStorage.setItem("todoListModul", todoListModul.checked );
+  localStorage.setItem("toDoList", taskList.innerHTML );
+    
+  for (var i = 0; i < imageSource.length; i++) {
     imageSource[i].onclick = function() {
     localStorage.setItem('Radio', this.value);
     }
@@ -201,6 +222,12 @@ function getLocalStorage() {
   quotesModul.checked = localStorage.getItem("quotesModul")==="false" ? false:true;
   greetingsModul.checked = localStorage.getItem("greetingsModul")==="false" ? false:true;
   сalendarModul.checked = localStorage.getItem("сalendarModul")==="false" ? false:true;
+  todoListModul.checked = localStorage.getItem("todoListModul")==="false" ? false:true;
+
+  if(localStorage.getItem('toDoList')){
+    taskList.innerHTML=localStorage.getItem('toDoList')
+  }
+
   if (localStorage.getItem('Radio')) {
     let Radio = localStorage.getItem('Radio');
     document.querySelector('input[name="image-source"][value="' + Radio + '"]').setAttribute('checked', 'checked');
@@ -208,6 +235,7 @@ function getLocalStorage() {
 }
 
 window.addEventListener("load", getLocalStorage);
+
 
 //BG-------------------------------------------------------------------------------------------------------------------------------------------------
 function dayTime(){
@@ -362,8 +390,8 @@ slidePrev.addEventListener("click", (e) => {
   getSlidePrev();
 });
 
-//tr------------------------------------------------------------------------
 
+//tr------------------------------------------------------------------------
 function changeTranslation() {
 currentLang = langCheckbox.checked === false ? 'be' : 'en';
 let quotes = currentLang==='be'?"js/quotes.json":"js/quotes-en.json";
@@ -382,9 +410,11 @@ playerLable.textContent=translation[currentLang].player;
 quotesLable.textContent=translation[currentLang].quotes;
 greetingsLable.textContent=translation[currentLang].greetings;
 сalendarLable.textContent=translation[currentLang].calendar_day;
+todoListLable.textContent=translation[currentLang].todo_list;
 tag.placeholder = translation[currentLang].tag; 
 refreshImg.value = translation[currentLang].refresh; 
-
+addTask.value = translation[currentLang].addTask; 
+todoListBlock.innerHTML = `${translation[currentLang].toDoList}`
   
 setPlaceholder();
  getQuotes(quotes);
@@ -406,8 +436,8 @@ function changeSettings(){
 }
 settingsImg.addEventListener("click", changeSettings);
 
-//modules------------------------------------------------
 
+//modules------------------------------------------------
 function configureModules(){
   if(weatherModul.checked===true){
     weather.classList.remove("hide");
@@ -445,6 +475,12 @@ function configureModules(){
     сalendar.classList.add("hide");
   }
 
+  if(todoListModul.checked===true){
+    toDoList.classList.remove("hide");
+  }else{
+    toDoList.classList.add("hide");
+  }
+
 }
 
 weatherModul.addEventListener("change",configureModules);
@@ -453,6 +489,7 @@ playerModul.addEventListener("change",configureModules);
 quotesModul.addEventListener("change",configureModules);
 greetingsModul.addEventListener("change",configureModules);
 сalendarModul.addEventListener("change",configureModules);
+todoListModul.addEventListener("change",configureModules);
 
 
 //date---------------------------------------------------------------------------------------------------------------------------------------------
@@ -567,10 +604,8 @@ let quotes = langCheckbox.checked === false?"js/quotes.json":"js/quotes-en.json"
 getQuotes(quotes);
 });
 
+
 //audiopleer--------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
 function loadMetaAudio(song) {
   let currentLang = langCheckbox.checked === false ? 'be' : 'en';
   
@@ -744,6 +779,46 @@ for (let item of playItem) {
 
   });
 }
+
+
+//ToDoList---------------------------------------------------------------------------------------------------------------------------------------------
+
+function addTaskToList (){
+let listTask=task.value;
+ let taskHTML = `<li class="list-point"><input type="checkbox" name="task-list" value="task"><p>${listTask}</p> <img src="assets/svg/delete.svg" alt=""></li>`
+ taskList.insertAdjacentHTML('beforeend',taskHTML);
+ task.value="";
+ task.focus();
+ setLocalStorage()
+}
+
+addTask.addEventListener("click",addTaskToList)
+
+function deleteTask(e){
+  if(e.target.tagName==="IMG"){
+    let parentNode= e.target.closest('li')
+    parentNode.remove()
+  }
+  setLocalStorage()
+}
+
+taskList.addEventListener("click",deleteTask)
+
+function doneTask(e){
+  if(e.target.checked===true){
+    e.target.nextSibling.classList.add("done")
+    e.target.setAttribute("checked", "checked");
+  }else{
+    e.target.nextSibling.classList.remove("done")
+    e.target.setAttribute("checked", "");
+
+  }
+  setLocalStorage()
+}
+
+taskList.addEventListener("click", doneTask)
+
+
 //translate--------------------------------------------------------------------------------------------------------------------------------------------
 function translate(weekday, day, month) {
   switch (weekday) {
